@@ -1,11 +1,11 @@
-SELECT 
-    courses.id AS id, 
-    courses.name AS name, 
-    courses.teacher_id AS teacher_id, 
+SELECT
+    courses.id AS id,
+    courses.name AS name,
+    courses.teacher_id AS teacher_id,
     teachers.name AS teacher_name
-FROM 
+FROM
     courses
-INNER JOIN 
+INNER JOIN
     teachers ON courses.teacher_id = teachers.id
-WHERE 
+WHERE
     courses.teacher_id IS NOT NULL;
