@@ -23,7 +23,11 @@ create table if not exists bills(
     total float,
     status enum('open', 'paid', 'lost') not null default 'open',
     created_at timestamp not null default CURRENT_TIMESTAMP,
-    updated_at timestamp not null default CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP
-);
+    updated_at timestamp not null default CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP,
+    foreign key (client_id) references clients(client_id)
 
+)
+
+
+insert int bills(client_id, total) values(10,15.00);
 
